@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="Base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Responce</title>
+</head>
+<body>
+<section class="banner_h d-flex justify-content-center align-item-center">
+    <div class="container">
+        <div class="text-center">
+            <h1>Invoice Parser</h1>
+            <div class="p-5">
+                <div class="m-5">
+                    <a type="button" class="btn btn-info" th:href="@{/}">Parse Again</a>
+                </div>
+
+                <table class="table table-hover">
+                    <thead>
+                    <tr style="background-color:lightgrey">
+                        <th scope="col">Type</th>
+                        <th scope="col">Value</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="response: ${response}">
+                        <th scope="row"><span th:text="${response.getType()}"></span>:</th>
+                        <th scope="row"><span th:text="${response.getMentionText()}"></span></th>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

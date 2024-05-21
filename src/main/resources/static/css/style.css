@@ -1,0 +1,24 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    /*opacity: 50%;*/
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top-color: #3498db;
+    position: absolute; /* To center the spinner on the button */
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the spinner within its space */
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

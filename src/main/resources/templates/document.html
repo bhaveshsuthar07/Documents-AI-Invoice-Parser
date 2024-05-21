@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="Base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<section class="banner_h d-flex justify-content-center align-item-center">
+    <div class="container">
+        <div class="text-center pt-3">
+            <h1>Invoice Parser</h1>
+            <div class="p-5">
+            <form th:action="@{/get_invoice}" id="myForm" method="post" enctype="multipart/form-data">
+
+                <div id="myDiv" class="spinner"></div>
+
+                <div class="m-5">
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInputGroup">Image
+                            File</label>
+                        <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa-solid fa-file-shield"></i>
+                                </div>
+                            </div>
+                            <input type="file" name="doc" class="form-control" id="inlineFormInputGroup">
+                        </div>
+                    </div>
+                </div>
+                <div class="container text-center p-5" >
+                    <button type="submit" id="sub" class="btn bg-primary m-1">Submit</button>
+                    <button type="reset" class="btn btn-danger m-1">Reset</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
